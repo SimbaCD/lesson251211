@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从工具到智能体：实务演示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', 'Noto Serif SC', sans-serif;
+            overflow: hidden;
+            background-color: #0f172a; /* 深蓝背景，专业感 */
+            color: #e2e8f0;
+        }
+        
+        /* 幻灯片容器 */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: scale(0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+            z-index: 10;
+        }
+
+        /* 标题样式 */
+        h1 { font-size: 3.5rem; font-weight: 700; background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; color: transparent; margin-bottom: 1.5rem; text-align: center; }
+        h2 { font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 2rem; border-left: 6px solid #3b82f6; padding-left: 20px; }
+
+        /* 流程卡片 */
+        .process-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: #60a5fa;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+        }
+
+        /* 连接线动画 */
+        .connector {
+            height: 4px;
+            background: #334155;
+            flex-grow: 1;
+            position: relative;
+            margin: 0 10px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .connector::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            transform: translateX(-100%);
+            animation: flow 2s infinite linear;
+        }
+        @keyframes flow { 100% { transform: translateX(100%); } }
+
+        /* 文书模拟 */
+        .doc-preview {
+            background: white;
+            color: #333;
+            width: 100%;
+            height: 140px;
+            padding: 15px;
+            font-family: 'Songti SC', serif;
+            font-size: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .doc-preview::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(transparent, white);
+        }
+        
+        /* 导航提示 */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        /* 步骤出现动画 */
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out; }
+        .slide.active .fade-in-up { opacity: 1; transform: translateY(0); }
+        
+        /* 延迟控制 */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-700 { transition-delay: 700ms; }
+        .delay-900 { transition-delay: 900ms; }
+    </style>
+</head>
+<body>
+
+    <!-- 导航提示 -->
+    <div class="nav-hint">
+        按 <kbd class="bg-slate-700 px-2 py-1 rounded text-white">Space</kbd> 或 <kbd class="bg-slate-700 px-2 py-1 rounded text-white">→</kbd> 下一页
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html></body>    </script>        });            }                prevSlide();            } else {                nextSlide();            if (e.clientX > window.innerWidth / 2) {            if (e.target.tagName === 'BUTTON') return; // 忽略按钮点击        document.addEventListener('click', (e) => {        // 点击监听 (右边下一页，左边上一页)        });            }                prevSlide();            } else if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {                nextSlide();            if (e.code === 'Space' || e.code === 'ArrowRight' || e.code === 'ArrowDown') {        document.addEventListener('keydown', (e) => {        // 键盘监听        }            }                showSlide(currentSlide);                currentSlide--;            if (currentSlide > 0) {        function prevSlide() {        }            }                showSlide(currentSlide);                currentSlide++;            if (currentSlide < slides.length - 1) {        function nextSlide() {        }            });                }                    slide.classList.add('active');                if (i === index) {                slide.classList.remove('active');            slides.forEach((slide, i) => {        function showSlide(index) {        let currentSlide = 0;        const slides = document.querySelectorAll('.slide');    <script>
+n    <!-- 控制脚本 -->    </div>        </div>            </div>                </div>                    </button>                        <i class="fas fa-redo mr-2"></i> 重新演示                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors" onclick="location.reload()">                <div class="mt-8">                <p class="text-gray-400">动手搭建属于你的第一个数字同事。</p>            <div class="text-center fade-in-up delay-300">
+n                <h3 class="text-2xl font-bold text-white mb-4">SOP 是算法，经验是数据</h3>                </div>
+n            </div>
+n                                </ul>                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>采矿权出让收益征收办法</strong></li>                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>省矿产资源管理条例</strong></li>                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>金属非金属矿山安全规程 (GB 16423)</strong></li>                    <ul class="space-y-2 text-gray-300">                    <h3 class="text-yellow-400 font-bold mb-4">矿业律师 RAG</h3>                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-2 py-1">你的护城河</div>                <div class="w-1/2 bg-slate-800 p-6 rounded-xl border border-yellow-500/30 relative overflow-hidden">                </div>                    </ul>                        <li><i class="fas fa-check text-green-500 mr-2"></i> 文书模板</li>                        <li><i class="fas fa-check text-green-500 mr-2"></i> 司法解释</li>                        <li><i class="fas fa-check text-green-500 mr-2"></i> 民法典</li>                    <ul class="space-y-2 text-gray-400">                    <h3 class="text-blue-400 font-bold mb-4">通用律师 RAG</h3>                <div class="w-1/2 bg-slate-800 p-6 rounded-xl border border-slate-700">            <div class="flex gap-8 mb-12 fade-in-up delay-100">            <h2 class="fade-in-up">进阶：行业壁垒 (矿业合规库)</h2>        <div class="max-w-4xl w-full">    <div class="slide" id="slide-5">
+n    <!-- Slide 5: 进阶与总结 -->    </div>        </div>
+n            </div>                </div>                    </div>                        <span class="inline-block bg-green-600 text-white px-4 py-1 rounded-full text-sm">已生成全套文件</span>                    <div class="mt-4 text-center">                        </div>
+n                    </div>                            </div>                                因果关系：...                                侵权事实：...<br>                            <div class="text-[8px] text-gray-400 leading-tight">                            <div class="text-[10px] text-orange-800 border-b pb-1 mb-1 font-bold">要素表(诉个人).xlsx</div>                        <div class="bg-white p-2 rounded transform -rotate-1 hover:rotate-0 transition-transform cursor-pointer border-2 border-orange-100">                        <!-- 文书4 -->                        </div>                            </div>                                诉请：披露实名信息...                                被告：行吟信息科技<br>                            <div class="text-[8px] text-gray-400 leading-tight">                            <div class="text-[10px] text-red-800 border-b pb-1 mb-1 font-bold">起诉状(诉平台).docx</div>                        <div class="bg-white p-2 rounded transform rotate-1 hover:rotate-0 transition-transform cursor-pointer border-2 border-red-100">                        <!-- 文书3 -->                        </div>                            </div>                                贵平台用户...涉嫌诽谤...                                致：行吟信息科技<br>                            <div class="text-[8px] text-gray-400 leading-tight">                            <div class="text-[10px] text-blue-800 border-b pb-1 mb-1 font-bold">律师函.docx</div>                        <div class="bg-white p-2 rounded transform -rotate-1 hover:rotate-0 transition-transform cursor-pointer">                        <!-- 文书2 -->                        </div>                            </div>                                详情：被投诉人捏造事实...                                投诉理由：名誉权侵权。<br>                            <div class="text-[8px] text-gray-400 leading-tight">                            <div class="text-[10px] text-gray-500 border-b pb-1 mb-1 font-bold">小红书投诉填表.txt</div>                        <div class="bg-white p-2 rounded transform rotate-1 hover:rotate-0 transition-transform cursor-pointer">                        <!-- 文书1 -->                    <div class="grid grid-cols-2 gap-3">                    <h3 class="text-green-400 font-bold mb-4">3. 成果交付 (闭环)</h3>                <div class="w-1/3 fade-in-up delay-400">
+n                <!-- 3. 产出闭环 -->                <div class="mt-32 text-slate-600 text-2xl animate-pulse"><i class="fas fa-angle-double-right"></i></div>
+n                <!-- 箭头动画 -->                </div>                    </div>                        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-800 to-transparent"></div>                        </div>                            <div class="text-gray-400">Filling Template B...</div>                            <div class="text-gray-400">Filling Template A...</div>                            <div class="text-purple-400">> 正在生成文书...</div>                            <div class="text-white">结论：构成事实诽谤</div>                            <div class="text-white">用户持有质检报告 ≠ 贴文描述</div>                            <div class="text-yellow-400">> 逻辑判定：</div>                            <div class="text-gray-400">调用《民法典》1024条</div>                            <div class="text-blue-400">> 检索知识库...</div>                            <div class="text-gray-400">提取时间：2024-12-09</div>                            <div class="text-gray-400">提取内容：“玩偶里有录音机”</div>                            <div class="text-green-400">> OCR识别完成...</div>                        <div class="space-y-3 text-xs font-mono">                    <div class="bg-slate-800 p-4 rounded-xl border border-yellow-500/30 h-96 overflow-hidden relative">                    <h3 class="text-yellow-400 font-bold mb-4">2. Agent 思考链</h3>                <div class="w-1/4 fade-in-up delay-200">
+n                <!-- 2. Agent 思考 -->                <div class="mt-32 text-slate-600 text-2xl animate-pulse"><i class="fas fa-angle-double-right"></i></div>
+n                <!-- 箭头动画 -->                </div>                    </div>                        </div>                            “我是商家，有出厂质检报告，玩偶里绝对没有录音机。”                            <span class="text-blue-400 font-bold">律师输入：</span><br>                        <div class="bg-slate-900 p-3 rounded text-xs text-gray-300">                        <img src="https://via.placeholder.com/300x400/334155/94a3b8?text=RedNote+Post" class="w-full rounded mb-3 opacity-80">                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 relative">                    <h3 class="text-blue-400 font-bold mb-4">1. 固证与输入</h3>                <div class="w-1/4 fade-in-up">                <!-- 1. 输入 -->                            <div class="flex items-start justify-between gap-6">                        <h2 class="text-center mb-10">第三步：全流程执行演示</h2>        <div class="w-full max-w-7xl">    <div class="slide" id="slide-4">
+n    <!-- Slide 4: 全流程执行演示 (核心动画) -->    </div>        </div>            </div>                </div>                    </div>                        </div>                            <div class="p-2 bg-slate-700 rounded border-l-4 border-orange-500 text-xs">起诉要素表.xlsx</div>                            <div class="p-2 bg-slate-700 rounded border-l-4 border-red-500 text-xs">起诉状(诉平台).docx</div>                            <div class="p-2 bg-slate-700 rounded border-l-4 border-blue-500 text-xs">律师函.docx</div>                            <div class="p-2 bg-slate-700 rounded border-l-4 border-blue-500 text-xs">投诉填表文案</div>                        <div class="space-y-3">                        <h3 class="text-gray-400 uppercase text-sm tracking-widest mb-4">Output 产出</h3>                    <div class="h-full bg-slate-800 rounded-2xl p-6 border border-slate-700 flex flex-col justify-center">                <div class="w-1/4 fade-in-up delay-300">
+n                <!-- 右侧：输出 -->                </div>                    </div>                        </div>                            </div>                                </ul>                                    <li class="flex items-center gap-2"><i class="fas fa-file-word text-blue-400"></i> 起诉平台起诉状模板.docx</li>                                    <li class="flex items-center gap-2"><i class="fas fa-file-word text-blue-400"></i> 律师函模板.docx</li>                                    <li class="flex items-center gap-2"><i class="fas fa-file-word text-blue-400"></i> 小红书侵权投诉流程.docx</li>                                <ul class="space-y-2 text-xs text-gray-300">                                <h4 class="text-green-400 text-xs font-bold mb-2 uppercase"><i class="fas fa-database mr-1"></i> RAG 知识库</h4>                            <div class="bg-slate-800 p-4 rounded-lg border border-green-500/30 bg-green-900/10 mt-auto">                            <!-- RAG Knowledge Base -->                            </div>                                <div><div class="font-bold text-sm">法律推理 (DeepSeek)</div><div class="text-xs text-gray-500">定性分析：诽谤 vs 评价</div></div>                                <div class="w-8 h-8 bg-yellow-500/20 rounded flex items-center justify-center text-yellow-400"><i class="fas fa-brain"></i></div>                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 flex items-center gap-3">                            <!-- Skill: Reasoning -->                            </div>                                <div><div class="font-bold text-sm">OCR 插件</div><div class="text-xs text-gray-500">读取图片文字</div></div>                                <div class="w-8 h-8 bg-purple-500/20 rounded flex items-center justify-center text-purple-400"><i class="fas fa-eye"></i></div>                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 flex items-center gap-3">                            <!-- Skill: OCR -->                        <div class="p-6 h-full flex flex-col gap-4">                                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase">Coze Agent</div>                    <div class="h-full bg-blue-900/10 rounded-2xl p-1 border-2 border-blue-500/30 relative">                <div class="w-2/4 fade-in-up delay-200">
+n                <!-- 中间：Agent黑盒 -->                </div>                    </div>                        </div>                            <i class="fas fa-keyboard mr-1"></i> 律师输入真实事实真相                        <div class="w-full bg-slate-700 p-3 rounded text-xs text-gray-300">                        </div>                            <div class="absolute bottom-0 w-full bg-black/60 text-xs text-center py-1">侵权截图</div>                            <i class="fas fa-image text-3xl text-gray-500"></i>                        <div class="w-24 h-32 bg-gray-700 rounded mb-4 flex items-center justify-center relative overflow-hidden group">                        <h3 class="text-gray-400 uppercase text-sm tracking-widest mb-4">Input 输入</h3>                    <div class="h-full bg-slate-800 rounded-2xl p-6 border border-slate-700 flex flex-col justify-center items-center">                <div class="w-1/4 fade-in-up delay-100">                <!-- 左侧：输入 -->            <div class="flex gap-8 mt-8">            <h2 class="fade-in-up">第二步：搭建 Agent 架构</h2>        <div class="w-full max-w-6xl">    <div class="slide" id="slide-3">
+n    <!-- Slide 3: Agent 架构设计 -->    </div>        </div>            </div>                <p class="text-center text-lg"><i class="fas fa-quote-left text-blue-500 mr-2"></i> 痛点：这些步骤如果人工做，耗时 <strong>3小时+</strong>，且大量重复劳动。<i class="fas fa-quote-right text-blue-500 ml-2"></i></p>
+n            <div class="mt-12 p-6 bg-slate-800/50 rounded-xl border border-slate-700 fade-in-up delay-300">                </div>
+n            </div>                    <p class="text-xs text-gray-400">先诉平台(拿信息)<br>后诉个人(打名誉)</p>                    <h3 class="font-bold text-white mb-2">两阶段起诉</h3>                    <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xl mb-3 border border-green-500/50">4</div>                <div class="process-card flex flex-col items-center text-center">
+n                <!-- Step 4 -->                 <div class="flex items-center justify-center text-gray-600"><i class="fas fa-chevron-right text-xl"></i></div>                 <!-- Arrow -->                </div>                    <p class="text-xs text-gray-400">投诉填表<br>律师函<br>诉讼材料</p>                    <h3 class="font-bold text-white mb-2">全套文书</h3>                    <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-3 border border-blue-500/50">3</div>                <div class="process-card flex flex-col items-center text-center border-blue-500/50 bg-blue-900/20">
+n                <!-- Step 3 -->                <div class="flex items-center justify-center text-gray-600"><i class="fas fa-chevron-right text-xl"></i></div>                </div>
+n                <!-- Arrow -->                    <p class="text-xs text-gray-400">比对事实<br>法律定性<br>民法典1024条</p>                    <h3 class="font-bold text-white mb-2">事实分析</h3>                    <div class="w-12 h-12 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-3 border border-orange-500/50">2</div>                <div class="process-card flex flex-col items-center text-center">                <!-- Step 2 -->                                <div class="flex items-center justify-center text-gray-600"><i class="fas fa-chevron-right text-xl"></i></div>                <!-- Arrow -->                </div>                    <p class="text-xs text-gray-400">截图、录屏<br>锁定UID<br>防删帖</p>                    <h3 class="font-bold text-white mb-2">紧急固证</h3>                    <div class="w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xl mb-3 border border-red-500/50">1</div>                <div class="process-card flex flex-col items-center text-center">                <!-- Step 1 -->            <div class="grid grid-cols-6 gap-4 fade-in-up delay-200">                        <p class="text-xl text-gray-400 mb-10 fade-in-up delay-100">在交给 AI 之前，我们必须先有清晰的业务流：</p>            <h2 class="fade-in-up">第一步：律师思维 SOP 拆解</h2>        <div class="w-full max-w-6xl">    <div class="slide" id="slide-2">    <!-- Slide 2: 律师SOP全景图 (纯业务) -->    </div>        </div>            </div>                </div>                    <span class="text-xl font-bold text-white">Coze + DeepSeek</span>                    <span class="block text-sm text-gray-400">工具</span>                <div class="px-6 py-3 bg-slate-800 rounded-lg border border-slate-700">                </div>                    <span class="text-xl font-bold text-white">小红书名誉权维权</span>                    <span class="block text-sm text-gray-400">场景</span>                <div class="px-6 py-3 bg-slate-800 rounded-lg border border-slate-700">            <div class="flex justify-center gap-8 fade-in-up delay-300">            <p class="text-3xl text-gray-300 font-light mb-12 fade-in-up delay-200">让 AI 成为律师的靠谱同事</p>            <h1 class="fade-in-up delay-100">从工具到智能体</h1>            </div>                <i class="fas fa-robot text-4xl text-blue-400"></i>            <div class="mb-6 inline-block p-4 rounded-full bg-blue-500/10 border border-blue-500/30 fade-in-up">        <div class="text-center max-w-4xl">    <div class="slide active" id="slide-1">    <!-- Slide 1: 封面 -->    </div>        <span class="text-blue-400 font-bold tracking-wider">AI LAWYER AGENT</span>    <div class="fixed top-4 left-6 z-50">n    
