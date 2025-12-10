@@ -6,14 +6,14 @@
     <title>从工具到智能体：让AI成为律师的靠谱同事 · 杜思敏</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&family=Inter:wght@400;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
+              sans: ['Nunito', 'Inter', 'system-ui', 'sans-serif'],
               serif: ['Noto Serif SC', 'serif'],
               mono: ['SFMono-Regular', 'Consolas', 'monospace'],
             },
@@ -38,15 +38,20 @@
     </script>
     <style>
         :root {
-            --bg-dark: #0f192d;
-            --card: rgba(255, 255, 255, 0.08);
+            --bg-dark: #f7f1e8;
+            --card: rgba(255, 255, 255, 0.75);
+            --ink-strong: #2a2630;
+            --ink-mid: #494356;
+            --ink-light: #6b6578;
         }
         body {
-            background: radial-gradient(circle at 15% 20%, rgba(94, 234, 212, 0.18), transparent 28%),
-                        radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.22), transparent 32%),
-                        linear-gradient(135deg, #0f172a 0%, #14203a 45%, #0f172a 100%);
-            color: #eef2ff;
-            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at 18% 20%, rgba(250, 218, 194, 0.55), transparent 32%),
+                radial-gradient(circle at 82% 18%, rgba(214, 236, 255, 0.55), transparent 36%),
+                radial-gradient(circle at 50% 80%, rgba(255, 240, 220, 0.35), transparent 45%),
+                var(--bg-dark);
+            color: var(--ink-strong);
+            font-family: 'Nunito', 'Inter', sans-serif;
             overflow: hidden;
             margin: 0;
         }
@@ -62,15 +67,22 @@
         .slide.active { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); z-index: 10; }
         .glass {
             background: var(--card);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            backdrop-filter: blur(14px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 22px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.14);
         }
-        .badge { letter-spacing: 0.2em; }
+        .badge { letter-spacing: 0.18em; }
+        h1, h2, h3 { color: var(--ink-strong); }
+        p, li, .text-sm { color: var(--ink-mid); }
+        .text-gray-400 { color: var(--ink-mid) !important; }
+        .text-gray-300 { color: var(--ink-mid) !important; opacity: 0.9; }
+        .text-gray-200 { color: var(--ink-light) !important; opacity: 0.95; }
+        .hero-title { color: #1f1b24; text-shadow: 0 3px 12px rgba(255,255,255,0.8); font-weight: 800; }
+        .hero-sub { color: #2b2733; text-shadow: 0 2px 10px rgba(255,255,255,0.75); font-weight: 800; }
         .progress-bar {
             position: fixed; bottom: 0; left: 0; height: 4px;
-            background: linear-gradient(90deg, #22d3ee, #60a5fa, #c084fc);
+            background: linear-gradient(90deg, #f6d365, #fda085, #8fd3f4);
             width: 0%; transition: width 0.4s ease; z-index: 50;
         }
         .avatar-line {
@@ -79,10 +91,10 @@
             background: url('avatar-sketch.png');
             background-size: cover;
             background-position: center;
-            filter: brightness(1.05) saturate(1.08);
+            filter: brightness(1.02) saturate(1.05);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
         }
         @keyframes sketch {
             from { transform: translateX(0); }
@@ -127,9 +139,9 @@
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-600/10 text-primary-200 text-[12px] font-semibold badge border border-primary-600/30">
                             <i class="fa-solid fa-bolt"></i> 主题分享
                         </div>
-                        <h1 class="text-4xl md:text-5xl font-bold leading-tight text-white">
+                        <h1 class="text-4xl md:text-5xl font-bold leading-tight hero-title">
                             从工具到智能体：<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">让AI成为律师的靠谱同事</span>
+                            <span class="hero-sub">让AI成为律师的靠谱同事</span>
                         </h1>
                         <p class="text-gray-300 text-base leading-relaxed">
                             像产品经理一样拆解业务，把标准化工作交给 AI，非标环节留给专业判断。
