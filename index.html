@@ -802,14 +802,11 @@
 
                 <div class="glass-card rounded-2xl overflow-hidden shadow-2xl ring-2 ring-blue-200">
                     <div class="bg-black relative w-full" style="padding-bottom: 56.25%;">
-                        <iframe 
+                        <video 
                             class="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            title="Agent 演示"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+                            src="./videos/video1.mp4" 
+                            controls>
+                        </video>
                     </div>
                 </div>
 
@@ -977,8 +974,50 @@
             </div>
         </div>
 
+        <!-- Page 10: Trae AI Coding -->
+        <div class="slide" data-index="11">
+            <div class="w-full max-w-5xl px-8 text-center space-y-8">
+                <h2 class="text-4xl font-bold gradient-text mb-6">⚡ Trae：AI Coding 的新篇章</h2>
+                <p class="text-xl text-slate-600">让律师也能像工程师一样，快速编写自动化脚本</p>
+
+                <div class="glass-card p-10 rounded-3xl space-y-6">
+                    <div class="text-left space-y-4">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-4">为什么律师需要 Trae？</h3>
+                        <ul class="space-y-3 text-lg text-slate-700">
+                            <li><i class="fa-solid fa-check text-green-500 mr-3"></i><strong>无需代码基础</strong> — 像写邮件一样编写自动化流程</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-3"></i><strong>快速原型化</strong> — 几分钟内把脑子里的想法变成可运行的 Bot</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-3"></i><strong>可视化调试</strong> — 看得到每一步在干什么，不是黑盒执行</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">核心功能演示</h3>
+                    <div class="flex flex-col items-center justify-center w-full h-full">
+                        <video src="./videos/video2.mp4" controls class="w-full max-h-[60vh] rounded-xl shadow-2xl border-4 border-white/50"></video>
+                        <p class="text-sm text-slate-500 mt-4"><i class="fa-solid fa-circle-info mr-1"></i>展示页</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-slate-800 mb-2">📝 自然语言编程</h4>
+                        <p class="text-sm text-slate-600">描述你的需求，Trae 生成执行代码</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-purple-500">
+                        <h4 class="font-bold text-slate-800 mb-2">🔗 工具集成</h4>
+                        <p class="text-sm text-slate-600">直接连接飞书、网盘、邮箱、CRM</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-pink-500">
+                        <h4 class="font-bold text-slate-800 mb-2">📊 实时监控</h4>
+                        <p class="text-sm text-slate-600">Bot 运行过程透明可视化追踪</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Page 10: 合规 -->
-        <div class="slide" data-index="10">
+        <div class="slide" data-index="11">
             <div class="glass-card max-w-5xl p-14 rounded-3xl text-center border-t-8 border-gradient-to-r from-red-500 to-orange-500 shadow-2xl">
                 <div class="w-24 h-24 bg-gradient-to-br from-red-100 to-orange-100 rounded-full flex items-center justify-center text-red-600 text-5xl mx-auto mb-8 ring-4 ring-red-200">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -1014,7 +1053,7 @@
         </div>
 
         <!-- Page 11: 收尾 -->
-        <div class="slide" data-index="11">
+        <div class="slide" data-index="12">
             <div class="text-center space-y-10">
                 <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-6 border-white shadow-2xl ring-4 ring-blue-200 hover:scale-105 transition-transform duration-500">
                     <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/a474cb0d-ee5a-4c52-b5dc-aa71df01e658" alt="杜思敏" class="w-full h-full object-cover">
@@ -1043,7 +1082,7 @@
     <!-- 控制栏 -->
     <div class="fixed bottom-8 right-8 z-50 flex gap-4 items-center">
         <div class="text-slate-600 font-bold text-sm bg-white px-4 py-2 rounded-full shadow-lg">
-            <span id="slideCounter">1</span> / <span id="slideTotal">11</span>
+            <span id="slideCounter">1</span> / <span id="slideTotal">12</span>
         </div>
         <button id="prevBtn" class="w-14 h-14 rounded-full bg-white shadow-lg text-slate-600 hover:bg-slate-50 hover:text-blue-600 hover:shadow-blue-300/50 transition-all flex items-center justify-center font-bold text-xl">
             <i class="fa-solid fa-chevron-left"></i>
